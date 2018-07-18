@@ -9,12 +9,15 @@ const mongoose = require("mongoose");
 // for all collections
 module.exports = function(model, schema) {
 
-  // The schema defined for the model
-  this.schema = schema;
-  // The name of the colleciton created inside Mongo (without the 's')
-  this.collectionName = model;
-  // define the mongo collection/model
-  this.objectModel = mongoose.model(model, schema);
+  // // The schema defined for the model
+  // this.schema = schema;
+  // // The name of the colleciton created inside Mongo (without the 's')
+  // this.collectionName = model;
+  // // define the mongo collection/model
+  // this.objectModel = mongoose.model(model, schema);
+
+   // define the mongo collection/model
+   this.objectModel = model;
 
   // Saves the sweSetup object to the database and returns a Promise
   // The assumption here is that the Object is valid
