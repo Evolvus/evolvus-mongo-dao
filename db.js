@@ -29,7 +29,7 @@ const connection = {
       // If not connected, return errors immediately rather than waiting for reconnect
       // this is a mongoose feature not mongodb, this is for schema validations
       "bufferMaxEntries": 0,
-      "bufferCommands": false,
+      "bufferCommands": true,
 
       // How long the MongoDB driver will wait before failing its initial
       // connection attempt.
