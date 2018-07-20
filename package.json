@@ -1,6 +1,6 @@
 {
-  "name": "evolvus-mongo-dao",
-  "version": "1.0.1",
+  "name": "@evolvus/evolvus-mongo-dao",
+  "version": "1.0.0",
   "description": "`evolvus-mongo-dao` is a component that encapsulates mongodb database functionalities across all Evolvus products.",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,6 @@
     "url": "https://github.com/Evolvus/evolvus-mongo-dao/issues"
   },
   "homepage": "https://github.com/Evolvus/evolvus-mongo-dao#readme",
-  "publishConfig": {
-    "registry": "http://10.10.69.203:8081/repository/npm-private/"
-  },
   "dependencies": {
     "debug": "^3.1.0",
     "mongoose": "^5.2.3"
