@@ -23,6 +23,7 @@ module.exports = function(model, schema) {
   // The assumption here is that the Object is valid
   // if it fails schema validation it will throw an exception
   this.save = function(result) {
+    debug(`DB save method. result :${result} is a parameter`);
     let object = new this.objectModel(result);
     return object.save();
   };
@@ -34,6 +35,7 @@ module.exports = function(model, schema) {
   // limit of 0 means all values, else absolute of limit is used
   // point here is that no error is thrown
   this.find = function(filter, orderby, skipCount, limit) {
+    debug(`DB find method.filter :${JSON.stringify(filter)}, orderby :${JSON.stringify(orderby)}, skipCount :${skipCount}, limit :${limit} are parameters`);
     return this.objectModel.find(filter)
       .sort(orderby)
       .skip(skipCount) // skipCount should not be negative
@@ -42,18 +44,21 @@ module.exports = function(model, schema) {
 
   // findOne returns an object or null based on the filter condition
   this.findOne = function(filter) {
+    debug(`DB findOne method. filter :${JSON.stringify(filter)} is a parameter`);
     return this.objectModel.findOne(filter);
   };
 
   // update will find the records matched by the filter and update
   // the attributes set in the update object
   this.update = function(filter, update) {
+    debug(`DB Update method.filter :${JSON.stringify(filter)} ,update :${JSON.stringify(update)} are parameters`);
     return this.objectModel.update(filter, update);
   };
 
   // Deletes all the entries of the collection.
   // To be used by test only
   this.deleteAll = function(filter) {
+    debug(`DB deleteAll method . filter :${JSON.stringify(filter)} is a parameter`);
     return this.objectModel.remove(filter);
   };
 
