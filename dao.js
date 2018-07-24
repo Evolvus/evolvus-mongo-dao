@@ -23,7 +23,7 @@ module.exports = function(model, schema) {
   // The assumption here is that the Object is valid
   // if it fails schema validation it will throw an exception
   this.save = function(result) {
-    debug(`DB save method.  result :${result} is a parameter `);
+    debug(`DB save method.  result :${JSON.stringify(result)} is a parameter `);
     let object = new this.objectModel(result);
     return object.save();
   };
